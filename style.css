@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500');
+@import url('https://fonts.googleapis.com/css?family=Amaranth');
+
+:root {
+  --black: #2f2f2f;
+  --slate: #626d71;
+  --ceramic: #cdcdc0;
+  --latte: #ddbc95;
+  --coffee: #b38867;
+  --cocoa: #301b28;
+  --chocolate: #523534;
+  --frosting: #ddc5a2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--black);
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('/img/pouringcoffee.jpeg');
+}
+
+/* headings */
+h1 {
+  font-family: 'Amaranth', sans-serif;
+  color: var(--chocolate);
+  text-align: center;
+}
+
+/* header */
+
+.header {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 80%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .header {
+    background: url('img/pouringcoffee_mob.jpeg');
+    background-position: center;
+    background-size: cover;
+    /* for paralax effect */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+
+  .banner {
+    text-align: center;
+    z-index: 3;
+  }
+
+  .banner-title {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .banner-title {
+    font-size: 6rem;
+  }
+
+  /* social icons */
+.banner-icons {
+  /* text-align: center; */
+  text-decoration: none;
+  width: 50%;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(4,2rem);
+  grid-column-gap: .5rem;
+  justify-content: center;
+}
+
+  .banner-social-icon {
+    display: block;
+    color: var(--coffee);
+    border: .1rem solid var(--coffee);
+    border-radius: 50%;
+    padding: .25rem;
+    transition: all .2s linear;
+  }
+
+  .banner-social-icon:hover {
+    background-color: var(--cocoa);
+    color: var(--latte);
+  }
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
