@@ -56,10 +56,81 @@ h1 {
   position: relative;
 }
 
+/* Nav toggle button */
+
+.toggle-btn {
+  position: fixed;
+  top: 5%;
+  right: 5%;
+  font-size: 2.5rem;
+  color: var(--black);
+  cursor: pointer;
+  animation-name: pulse;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+/* Nav toggle button animation */
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Navigation */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  /* width: 13rem; */
+  background: var(--coffee);
+  opacity: .9;
+  z-index: 3;
+}
+
 nav img {
   width: 200px;
   padding: .7rem;
 }
+
+/* For JS */
+nav {
+  width: 0;
+  overflow: hidden;
+  transition: all .5s linear;
+}
+
+.nav-show {
+  width: 13rem;
+}
+
+.nav-single-link {
+  display: block;
+  text-decoration: none;
+  list-style: none;
+  font-size: 1.2rem;
+  padding: .5rem 2rem;
+  text-align: center;
+  color: var(--cocoa);
+  transition: all .2s ease-in-out;
+}
+
+.nav-single-link:hover {
+  background: var(--chocolate);
+  color: var(--latte);
+}
+
 
 @media (max-width: 768px) {
   .header {
@@ -131,69 +202,6 @@ nav img {
     object-fit: cover;
   }
 
-  /* Nav toggle button */
-
-  .toggle-btn {
-    position: fixed;
-    top: 5%;
-    right: 5%;
-    font-size: 2.5rem;
-    color: var(--black);
-    cursor: pointer;
-    animation-name: pulse;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-  }
-
-  /* Nav toggle button animation */
-
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-
-    50% {
-      transform: scale(1.5);
-    }
-
-    100% {
-      transform: scale(1);
-    }
-  }
-
-  nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 13rem;
-    background: var(--coffee);
-    opacity: .9;
-    z-index: 3;
-  }
-
-  /* nav ul {
-  opacity: 1;
-  color: black;
-  top: 0;
-  z-index: 3;
-} */
-
-  .nav-single-link {
-    display: block;
-    text-decoration: none;
-    list-style: none;
-    font-size: 1.2rem;
-    padding: .5rem 2rem;
-    text-align: center;
-    color: var(--cocoa);
-    transition: all .2s ease-in-out;
-  }
-
-  .nav-single-link:hover {
-    background: var(--chocolate);
-    color: var(--latte);
-  }
 
   /* video switch toggle */
   .videoSwitch-container {
@@ -218,13 +226,17 @@ nav img {
   .videoSwitch-btn {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 0%;
     width: 50%;
     height: 100%;
     background: var(--chocolate);
     border-radius: .25rem;
+    transition: all .3s ease-out;
   }
 
+  .btnSlide {
+    left: 50%;
+  }
 
 
 
