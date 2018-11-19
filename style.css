@@ -36,10 +36,44 @@ h3 {
   font-size: 2rem;
 }
 
+.banner-title {
+  font-size: 6rem;
+}
+
+/* social icons */
+.banner-icons {
+  text-decoration: none;
+  width: 50%;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(4, 2rem);
+  grid-column-gap: .5rem;
+  justify-content: center;
+}
+
+.banner-social-icon {
+  display: block;
+  color: var(--coffee);
+  border: .1rem solid var(--coffee);
+  border-radius: 50%;
+  padding: .25rem;
+  transition: all .2s linear;
+}
+
+.banner-social-icon:hover {
+  background-color: var(--cocoa);
+  color: var(--latte);
+}
+
+
 /* SECTIONS */
 
 .section-title {
   padding: 1rem .5rem;
+}
+
+.section-title-left {
+  margin-left: 10rem;
 }
 
 .section-title-name {
@@ -183,103 +217,154 @@ nav {
   color: var(--latte);
 }
 
-  /* DRINK OFFER section */
+/* DRINK OFFER section */
 
-  .drink {
-    background: var(--chocolate);
-    color: var(--frosting);
-  }
-  
-  .drink-form,
-  .drink-card {
-    text-align: center;
-    display: grid;
-    grid-template-columns: 70%;
-    justify-content: center;
-    grid-row-gap: 1.25rem;
-  }
+.drink {
+  background: var(--chocolate);
+  color: var(--frosting);
+}
 
-  .drink-card {
-    margin-top: 2rem;
-  }
-  
-  .drinkForm-feedback {
-    padding: .25rem;
-    display: none;
-  }
-  
-  .error {
-    display: block;
-    color: rgb(249, 161, 176);
-  }
-  
-  .success {
-    display: block;
-    color: rgb(119, 210, 119);
-  }
-  
-  .drink-form-title,
-  .drink-card-title {
-    font-size: 2rem;
-  }
-  
-  .input-name,
-  .input-lastname,
-  .input-email {
-    width: 100%;
-  }
-  
-  .input-name,
-  .input-lastname,
-  .input-email,
-  .input-submit {
-    font-size: 1rem;
-    padding: .25rem .5rem;
-    background: rgb(221, 189, 151, 0.8);
-    outline: none;
-    border: none;
-    color: var(--black);
-  }
-  
-  .input-name::placeholder,
-  .input-lastname::placeholder,
-  .input-email::placeholder {
-    color: var(--cocoa);
-  }
-  
-  .input-submit {
-    background: var(--frosting);
-    color: var(--cocoa);
-    transition: .2s linear;
-    cursor: pointer;
-    text-transform: uppercase;
-  }
-  .input-submit:hover {
-    background: var(--coffee);
-    color: #fff;
-    text-transform: capitalize;
-  }
-  .drink-card-list {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-row-gap: 2rem;
-  }
-  
-  .person-thumbnail {
-    width: 4rem;
-    border-radius: 50%;
-  }
-  
-  .person {
-    display: grid;
-    grid-template-columns: auto auto 1fr;
-    align-items: center;
-    text-align: left;
-    grid-gap: 1rem;
-    border: .005rem solid #cdcdc0;
-    padding: 1rem;
-    font-size: 1rem;
-  }
+.drink-form,
+.drink-card {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 70%;
+  justify-content: center;
+  grid-row-gap: 1.25rem;
+}
+
+.drink-card {
+  margin-top: 2rem;
+}
+
+.drinkForm-feedback {
+  padding: .25rem;
+  display: none;
+}
+
+.error {
+  display: block;
+  color: rgb(249, 161, 176);
+}
+
+.success {
+  display: block;
+  color: rgb(119, 210, 119);
+}
+
+.drink-form-title,
+.drink-card-title {
+  font-size: 2rem;
+}
+
+.input-name,
+.input-lastname,
+.input-email {
+  width: 100%;
+}
+
+.input-name,
+.input-lastname,
+.input-email,
+.input-submit {
+  font-size: 1rem;
+  padding: .25rem .5rem;
+  background: rgb(221, 189, 151, 0.8);
+  outline: none;
+  border: none;
+  color: var(--black);
+}
+
+.input-name::placeholder,
+.input-lastname::placeholder,
+.input-email::placeholder {
+  color: var(--cocoa);
+}
+
+.input-submit {
+  background: var(--frosting);
+  color: var(--cocoa);
+  transition: .2s linear;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.input-submit:hover {
+  background: var(--coffee);
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.drink-card-list {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-row-gap: 2rem;
+}
+
+.person-thumbnail {
+  width: 4rem;
+  border-radius: 50%;
+}
+
+.person {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: center;
+  text-align: left;
+  grid-gap: 1rem;
+  border: .005rem solid #cdcdc0;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+/* GALLERY SECTION */
+
+.gallery-container {
+  max-width: 90vw;
+  margin: 2rem auto;
+}
+
+.image-item {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: all .4s linear;
+  opacity: 1;
+}
+
+.gallery-item {
+  background: linear-gradient(var(--latte), var(--latte));
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-item:hover .image-item {
+  opacity: .5;
+  transform: scale(1.2);
+}
+
+.gallery-item-icon {
+  position: absolute;
+  color: var(--coffee);
+  top: 50%;
+  left: 50%;
+  display: inline-block;
+  font-size: 2.5rem;
+  text-decoration: none;
+  transition: all .5s ease;
+  /* hised the icon */
+  transform: scale(0);
+}
+
+.gallery-item:hover .gallery-item-icon {
+  transform: scale(1.3) translate(-50%, -50%);
+}
+
+.gallery-item-icon:hover {
+  color: var(--cocoa);
+  cursor: pointer;
+}
+
 
 
 @media (max-width: 768px) {
@@ -305,40 +390,64 @@ nav {
   .video-container {
     display: none;
   }
+}
+
+@media (min-width: 992px) {
+  .gallery-container {
+    height: 100vh;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      /* the number of actual img is 9 */
+      "one one two three"
+      "one one four four"
+      "five six seven seven"
+      "eight nine seven seven";
+  }
+
+  .item-1 {
+    grid-area: one;
+  }
+
+  .item-2 {
+    grid-area: two;
+  }
+
+  .item-3 {
+    grid-area: three;
+  }
+
+  .item-4 {
+    grid-area: four;
+  }
+
+  .item-5 {
+    grid-area: five;
+  }
+
+  .item-6 {
+    grid-area: six;
+  }
+
+  .item-7 {
+    grid-area: seven;
+  }
+
+  .item-8 {
+    grid-area: eight;
+  }
+
+  .item-9 {
+    grid-area: nine;
+  }
+
 
 }
 
 
 
+
 @media (min-width: 768px) {
-  .banner-title {
-    font-size: 6rem;
-  }
-
-  /* social icons */
-  .banner-icons {
-    text-decoration: none;
-    width: 50%;
-    margin: 2rem auto;
-    display: grid;
-    grid-template-columns: repeat(4, 2rem);
-    grid-column-gap: .5rem;
-    justify-content: center;
-  }
-
-  .banner-social-icon {
-    display: block;
-    color: var(--coffee);
-    border: .1rem solid var(--coffee);
-    border-radius: 50%;
-    padding: .25rem;
-    transition: all .2s linear;
-  }
-
-  .banner-social-icon:hover {
-    background-color: var(--cocoa);
-    color: var(--latte);
-  }
 
   .video-container {
     position: absolute;
@@ -423,5 +532,12 @@ nav {
     grid-template-columns: 1fr 1fr;
     grid-gap: 1rem;
   }
+}
 
+@media (min-width: 576px) {
+  .gallery-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  }
 }
