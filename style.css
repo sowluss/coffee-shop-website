@@ -365,6 +365,32 @@ nav {
   cursor: pointer;
 }
 
+/* MODAL */
+
+.gallery-modal {
+  position: fixed;
+  background: rgba(0,0,0,.5);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-modal-item {
+  background: url(gallery/1.jpeg) center/cover;
+  height: 70vh;
+  width: 80vw;
+}
+
+.gallery-modal-close {
+  position: fixed;
+}
+
+
 
 
 @media (max-width: 768px) {
@@ -392,13 +418,15 @@ nav {
   }
 }
 
-@media (min-width: 992px) {
+/* ! greed areas not working */
+
+/* @media (min-width: 992px) {
   .gallery-container {
-    height: 100vh;
+    height: 120vh;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
     grid-template-rows: repeat(4, 1fr);
     grid-template-areas:
-      /* the number of actual img is 9 */
       "one one two three"
       "one one four four"
       "five six seven seven"
@@ -441,10 +469,7 @@ nav {
     grid-area: nine;
   }
 
-
-}
-
-
+} */
 
 
 @media (min-width: 768px) {
