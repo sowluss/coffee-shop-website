@@ -368,6 +368,10 @@ nav {
 /* MODAL */
 
 .gallery-modal {
+  display: none;
+}
+
+.gallery-modal-show {
   position: fixed;
   background: rgba(0,0,0,.5);
   top: 0;
@@ -381,14 +385,27 @@ nav {
 }
 
 .gallery-modal-item {
-  background: url(gallery/1.jpeg) center/cover;
+  background: url(gallery/1.jpeg)center/cover;
   height: 70vh;
   width: 80vw;
+  border: 1.5px solid var(--frosting);
 }
 
 .gallery-modal-close {
   position: fixed;
+  font-size: 2rem; 
+  color: var(--ceramic);
+  bottom: 5%;
+  right: 5%;
+  transition: color .5s linear;
+  display: inline-block;
 }
+
+.gallery-modal-close:hover {
+  color: lightsalmon;
+  cursor: pointer;
+}
+
 
 
 
@@ -557,6 +574,14 @@ nav {
     grid-template-columns: 1fr 1fr;
     grid-gap: 1rem;
   }
+
+  /* MODAL */
+
+  .gallery-modal-item {
+    height: 80vh;
+    width: 60vw;
+  }
+
 }
 
 @media (min-width: 576px) {

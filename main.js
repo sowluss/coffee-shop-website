@@ -36,6 +36,21 @@ function evenListeners() {
       ui.showFeedback('Please, complete all fields', 'error')
     }
   })
+
+  // Display Modal
+  const links = document.querySelectorAll('.gallery-item-icon');
+  links.forEach(function(item) {
+    item.addEventListener('click', function(event){
+      ui.showModal(event);
+    })
+  })
+  // hide modal 
+document.querySelector('.gallery-modal-close').addEventListener('click', function(){
+  ui.closeModal()
+})
+
+  
+
 }
 
 
@@ -114,6 +129,29 @@ UI.prototype.clearFields = function () {
   document.querySelector('.input-lastname').value = '';
   document.querySelector('.input-email').value = '';
 }
+
+// show modal
+
+UI.prototype.showModal = function(event) {
+  event.preventDefault();
+  if (event.target.parentElement.classList.contains('gallery-item-icon'));
+    let id = event.target.parentElement.dataset.id;
+
+    const modal = document.querySelector('.gallery-modal');
+    const modalItem = document.querySelector('.gallery-modal-item');
+
+    modal.classList.add('gallery-modal-show');
+    modalItem.style.backgroundImage = `url(gallery/${id}.jpeg)`
+}
+
+// hide modal 
+UI.prototype.closeModal = function() {
+  document.querySelector('.gallery-modal').classList.remove('gallery-modal-show');
+}
+
+
+
+
 
 function Customer(name, lastname, email) {
   this.name = name;
