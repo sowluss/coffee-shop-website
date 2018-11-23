@@ -11,6 +11,11 @@
   --cocoa: #301b28;
   --chocolate: #523534;
   --frosting: #ddc5a2;
+  --orange: #f49911;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 * {
@@ -149,11 +154,12 @@ h3 {
   top: 5%;
   right: 5%;
   font-size: 2.5rem;
-  color: var(--black);
+  color: var(--orange);
   cursor: pointer;
   animation-name: pulse;
   animation-duration: 2s;
   animation-iteration-count: infinite;
+  z-index: 999;
 }
 
 /* Nav toggle button animation */
@@ -373,7 +379,7 @@ nav {
 
 .gallery-modal-show {
   position: fixed;
-  background: rgba(0,0,0,.5);
+  background: rgba(0, 0, 0, .5);
   top: 0;
   left: 0;
   bottom: 0;
@@ -393,7 +399,7 @@ nav {
 
 .gallery-modal-close {
   position: fixed;
-  font-size: 2rem; 
+  font-size: 2rem;
   color: var(--ceramic);
   bottom: 5%;
   right: 5%;
@@ -410,8 +416,8 @@ nav {
 
 .contact-container {
   max-width: 90vw;
-  margin: 0 auto;
-  display: grid; 
+  margin: 2rem auto;
+  display: grid;
   grid-row-gap: 1rem;
 }
 
@@ -434,6 +440,7 @@ nav {
   margin: .5rem 0;
   letter-spacing: .20rem;
 }
+
 .contact-item-text {
   font-size: 1rem;
   color: var(--slate);
@@ -519,16 +526,19 @@ nav {
 
 @media (min-width: 992px) {
   .contact-info {
-    grid-template-columns: 1fr;
-    order: 0;
+    display: block;
+    
   }
+
   .contact-container {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1.5fr;
     grid-column-gap: 2rem;
   }
+
   .contact-map {
     align-self: center;
+
   }
 }
 
@@ -627,11 +637,10 @@ nav {
   }
 
   /* CONTACT section */
-   .contact-info {
-     grid-template-columns: repeat(3, 1fr);
-     order: -1;
-   }
-
+  .contact-info {
+    grid-template-columns: repeat(3, 1fr);
+    order: -1;
+  }
 }
 
 @media (min-width: 576px) {
