@@ -7,7 +7,7 @@
   --slate: #626d71;
   --ceramic: #cdcdc0;
   --latte: rgb(221, 189, 151);
-  --coffee: rgb(179, 136, 103);
+  --coffee: #b28766;
   --cocoa: #301b28;
   --chocolate: #523534;
   --frosting: #ddc5a2;
@@ -463,16 +463,18 @@ nav {
 footer {
   width: 100%;
   height: 60px;
-  background: var(--coffee);
+  background: var(--chocolate);
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
 }
 
+/********************  Media Queries  *********************/
+
 @media (max-width: 768px) {
   .header {
-    background: url('img/pouringcoffee_mob.jpeg');
+    background: url('img/coffeecup-v.jpg');
     background-position: center;
     background-size: cover;
     /* for paralax effect */
@@ -483,10 +485,12 @@ footer {
   .banner {
     text-align: center;
     z-index: 3;
+    margin-top: 35%;
   }
 
   .banner-title {
-    font-size: 4rem;
+    font-size: 3rem;
+    color: #c19898;
   }
 
   /* Hides video on small screens */
@@ -495,6 +499,27 @@ footer {
   }
 }
 
+@media (max-width: 576px) {
+  .gallery-container {
+    display: block;
+  }
+  .gallery-item {
+    margin-bottom: 20px;
+  }
+
+  .gallery-item-icon {
+    display: none;
+  }
+
+  .gallery-item:hover .image-item {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .section-title-left {
+    margin-left: 5rem;
+  }
+}
 /* ! greed areas not working */
 
 /* @media (min-width: 992px) {
@@ -610,7 +635,7 @@ footer {
     left: 0%;
     width: 50%;
     height: 100%;
-    background: var(--chocolate);
+    background: var(--orange);
     border-radius: .25rem;
     transition: all .3s ease-out;
   }
